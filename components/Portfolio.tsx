@@ -71,6 +71,9 @@ function SectionTitle({
 export default function Portfolio() {
   const [profileKey, setProfileKey] = useState<ProfileKey>("lead");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  
+  const [status, setStatus] = useState("");
+  const [isSuccess, setIsSuccess] = useState(false);
   const profile = profiles[profileKey];
   const currentYear = new Date().getFullYear();
 
@@ -150,26 +153,29 @@ export default function Portfolio() {
 
     setLoading(false);
 
-    if(data.success){
+    if (data.success) {
+    setIsSuccess(true);
 
-    alert(
-    "Message sent successfully!"
+    setStatus(
+      "✅ Thank you! Your message has been sent successfully."
     );
 
     setForm({
-    name:"",
-    email:"",
-    company:"",
-    message:"",
+      name: "",
+      email: "",
+      company: "",
+      message: "",
     });
 
-    }else{
+  } else {
 
-    alert(
-    "Something went wrong."
+    setIsSuccess(false);
+
+    setStatus(
+      "❌ Something went wrong. Please try again."
     );
 
-  } 
+  }
 };
 
   return (
@@ -501,7 +507,6 @@ export default function Portfolio() {
       <p>
       I'm actively looking for the right opportunity.
       Let's discuss how I can contribute to your team.
-
       </p>
 
       <div className="contact-list">
@@ -561,7 +566,18 @@ export default function Portfolio() {
       <h3>
         Send a Message
       </h3>
+       {status && (
+        <div
+          className={
+            isSuccess
+            ? "form-success"
+            : "form-error"
+          }
+        >
+          {status}
+        </div>
 
+      )}     
       <form onSubmit={handleSubmit} className="contact-form">
            
         <input
