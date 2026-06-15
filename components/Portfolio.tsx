@@ -81,11 +81,18 @@ export default function Portfolio() {
     message: "",
   });
 
+  type FormErrors = {
+  name?: string;
+  email?: string;
+  company?: string;
+  message?: string;
+};
+
   const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
   const validateForm = () => {
-    const newErrors: any = {};
+    const newErrors: FormErrors = {};
 
     if (!form.name.trim()) {
       newErrors.name = "Name is required";
