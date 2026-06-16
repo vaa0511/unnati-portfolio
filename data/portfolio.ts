@@ -23,7 +23,7 @@ export const basePortfolio = {
   availability: "Immediate Joiner",
   workPreference: "Remote, Hybrid & Relocation",
   years: "9+",
-  resume: "/resume/unnatimandaliya_teamlead.pdf",
+  resume: "/resume/unnatimandaliya_16Jun_24.pdf",
   skills: [
     {
       label: "Backend",
@@ -41,6 +41,11 @@ export const basePortfolio = {
     {
       label: "Tools",
       items: ["Git", "GitHub", "Bitbucket", "Jira", "Postman"],
+    },
+    {
+      label: "AI Tools",
+      isNew: true,
+      items: ["ChatGPT", "GitHub Copilot", "Claude AI", "Perplexity AI", "Prompt Engineering"],
     },
     {
       label: "Methods",
@@ -230,9 +235,10 @@ export const profiles: Record<ProfileKey, PortfolioProfile> = {
     about: [
       "I am a Full Stack Developer and Technical Team Lead with 9+ years of experience in software development and project delivery. I specialize in PHP, Laravel, Vue.js, JavaScript, MySQL, REST APIs, team leadership, and secure, scalable web applications.",
       "I turn business ideas into dependable digital products across backend, frontend, database, integrations, and delivery while keeping quality, timelines, communication, and customer outcomes in focus.",
+      "AI-Assisted Full Stack Developer Leveraging ChatGPT, Claude, GitHub Copilot, Gemini, and modern AI workflows to accelerate development, improve code quality, automate repetitive tasks, and deliver business solutions efficiently."
     ],
     priorities: [
-      "Full-stack development",
+      "AI-Assisted Full Stack Developer",
       "Vue.js",
       "PHP",
       "Laravel",

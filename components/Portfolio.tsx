@@ -26,7 +26,7 @@ import {
   Users,
   X,
   Zap,
-  Heart,
+  Brain,
 } from "lucide-react";
 import { useState } from "react";
 import {
@@ -305,9 +305,19 @@ export default function Portfolio() {
             {basePortfolio.skills.map((group, index) => (
               <div className="skill-row" key={group.label}>
                 <span className="skill-icon">
-                  {index === 2 ? <Database size={18} /> : <Code2 size={18} />}
+                  {index === 2 ? <Database size={18} /> : index === 5 ? <Brain size={18} /> : <Code2 size={18} />}
                 </span>
-                <strong>{group.label}</strong>
+                {/* <strong>{group.label}</strong> */}
+                
+                  <div className="skill-title">
+                    <strong>{group.label}</strong>
+
+                    {group.label === "AI Tools" && (
+                      <span className="ai-badge">
+                        NEW
+                      </span>
+                    )}
+                  </div>
                 <div>
                   {group.items.map((item) => (
                     <span className="skill-chip" key={item}>
